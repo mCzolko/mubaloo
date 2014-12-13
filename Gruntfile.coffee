@@ -4,6 +4,17 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
+    less:
+      development:
+        files:
+          'www/css/style.css': 'www/css/main.less'
+
+      production:
+        options:
+          cleancss: true
+        files:
+          'www/css/style.css': 'www/css/main.less'
+
     phonegap:
       config:
         plugins: []
@@ -38,11 +49,20 @@ module.exports = (grunt) ->
         livereload: '<%= connect.options.livereload %>'
       all:
         files: 'www/{,*/}*.{html,js,css,png}'
+      less:
+        files: 'www/css/**/*.less'
+        tasks: ['less:development']
 
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-phonegap'
+  grunt.loadNpmTasks 'grunt-contrib-less'
+
+  grunt.registerTask 'ios', ->
+    grunt.task.run 'less:production'
+    grunt.task.run 'phonegap:build:ios'
+    grunt.task.run 'phonegap:run:ios'
 
   grunt.registerTask 'server', ->
     grunt.task.run 'connect:server'
-    grunt.task.run 'watch:all'
+    grunt.task.run 'watch'
