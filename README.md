@@ -14,14 +14,14 @@ Clone this repository and then install node modules:
 ```sh
 $ cd mubaloo
 $ npm install
+$ bower install
 ```
 
 ### Build and running application
-First of all you have to install iOS platform by running command
 ```sh
-$ grunt phonegap:build:ios
+$ grunt ios
 ```
-After successful build run the application like a boss by:
+For development purposes
 ```sh
-$ grunt phonegap:run:ios
+$ grunt server
 ```
