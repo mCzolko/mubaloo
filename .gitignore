@@ -3,3 +3,4 @@ node_modules/
 build/
 
 www/css/*.css
+www/js/build.js

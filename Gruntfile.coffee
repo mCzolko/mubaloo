@@ -4,6 +4,17 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
 
+    concat:
+      javascript:
+        files:
+          'www/js/build.js': [
+            'www/js/libs/jquery-*.js'
+            'www/js/libs/handlebars-*.js'
+            'www/js/libs/ember-*.js'
+            'bower_components/bootstrap/dist/js/bootstrap.min.js'
+            'www/js/app.js'
+          ]
+
     less:
       development:
         files:
@@ -57,12 +68,18 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-phonegap'
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
+
+  grunt.registerTask 'build', ->
+    grunt.task.run 'concat:javascript'
+    grunt.task.run 'less:production'
 
   grunt.registerTask 'ios', ->
-    grunt.task.run 'less:production'
+    grunt.task.run 'build'
     grunt.task.run 'phonegap:build:ios'
     grunt.task.run 'phonegap:run:ios'
 
   grunt.registerTask 'server', ->
+    grunt.task.run 'build'
     grunt.task.run 'connect:server'
     grunt.task.run 'watch'
