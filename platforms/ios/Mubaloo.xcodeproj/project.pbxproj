@@ -41,6 +41,8 @@
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		ABC2580B5939401C80169A55 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 034EB139A8944124BF1EFB64 /* DatePicker.m */; };
 		A0CA27EDA7EF4A02AB8FF792 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 136B51586676423AA1DE0A5A /* DatePicker.xib */; };
+		8C7DDB19C303426DB0A1C801 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E75112AFEC46DEA623F22E /* CDVLocation.m */; };
+		0A1F9159B8FE424D9E5A8BE7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6A1BA479084CB39E322DC6 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,9 @@
 		034EB139A8944124BF1EFB64 /* DatePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "DatePicker.m"; path = "com.plugin.datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		DDF4566520A343A5987B84FE /* DatePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DatePicker.h"; path = "com.plugin.datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		136B51586676423AA1DE0A5A /* DatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = 4; };
+		D0E75112AFEC46DEA623F22E /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "org.apache.cordova.geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		71807F85CBAE421FB05D67F3 /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "org.apache.cordova.geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		3A6A1BA479084CB39E322DC6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				0A1F9159B8FE424D9E5A8BE7 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +199,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				3A6A1BA479084CB39E322DC6 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +217,8 @@
 			children = (
 				034EB139A8944124BF1EFB64 /* DatePicker.m */,
 				DDF4566520A343A5987B84FE /* DatePicker.h */,
+				D0E75112AFEC46DEA623F22E /* CDVLocation.m */,
+				71807F85CBAE421FB05D67F3 /* CDVLocation.h */,
 			);
 			name = Plugins;
 			path = "Mubaloo/Plugins";
@@ -396,6 +405,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				ABC2580B5939401C80169A55 /* DatePicker.m in Sources */,
+				8C7DDB19C303426DB0A1C801 /* CDVLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5F022F8B-0ACC-4102-8422-8397F10587F6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Mubaloo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DE20F4A030D2EACAC588152DD236F30D4F7EBFD5</key>
+		<string>github.com:mCzolko/mubaloo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/Mubaloo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DE20F4A030D2EACAC588152DD236F30D4F7EBFD5</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:mCzolko/mubaloo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DE20F4A030D2EACAC588152DD236F30D4F7EBFD5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DE20F4A030D2EACAC588152DD236F30D4F7EBFD5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mubaloo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

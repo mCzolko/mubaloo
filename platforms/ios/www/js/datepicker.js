@@ -14,6 +14,5 @@ function showDatepicker() {
 document.addEventListener('deviceready', function () {
 
   $('#currentDatetime').focus(showDatepicker);
-  $('#currentDatetime').click(showDatepicker);
 
 }, false);

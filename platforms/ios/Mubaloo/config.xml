@@ -22,6 +22,9 @@
     <feature name="DatePicker">
         <param name="ios-package" value="DatePicker" />
     </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
     <name>Mubaloo</name>
     <description>Mubaloo Front End Developer Trial Task</description>
     <author email="michael@czolko.cz" href="czolko.cz">Michael Czolko</author>
@@ -29,7 +32,6 @@
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
-    <preference name="permissions" value="none" />
     <access origin="*" />
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />

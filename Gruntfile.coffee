@@ -13,6 +13,7 @@ module.exports = (grunt) ->
             'www/js/libs/ember-*.js'
             'bower_components/bootstrap/dist/js/bootstrap.min.js'
             'www/js/datepicker.js'
+            'www/js/geolocation.js'
             'www/js/app.js'
           ]
 
