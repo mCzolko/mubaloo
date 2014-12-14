@@ -61,7 +61,11 @@ module.exports = (grunt) ->
       options:
         livereload: '<%= connect.options.livereload %>'
       all:
-        files: 'www/{,*/}*.{html,js,css,png}'
+        files: [
+          'www/{,*/}*.{html,js,css,png}'
+          '!www/js/build.js'
+        ]
+        tasks: ['concat:javascript']
       less:
         files: 'www/css/**/*.less'
         tasks: ['less:development']
