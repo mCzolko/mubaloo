@@ -1,5 +1,7 @@
 function showDatepicker() {
 
+  $('#currentDatetime').blur();
+
   var options = {
     date: new Date(),
     mode: 'datetime'
@@ -7,12 +9,11 @@ function showDatepicker() {
 
   window.datePicker.show(options, function(date) {
     $('#currentDatetime').val(date.toDateString() + " " + date.toLocaleTimeString());
+    $('#currentDatetime').change();
   });
 
 }
 
-document.addEventListener('deviceready', function () {
-
+function datePickerInit() {
   $('#currentDatetime').focus(showDatepicker);
-
-}, false);
+}

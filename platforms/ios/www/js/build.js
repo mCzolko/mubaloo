@@ -63208,6 +63208,8 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 })}}},c.prototype.activate=function(b,d,e){function f(){g.removeClass("active").find("> .dropdown-menu > .active").removeClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded",!1),b.addClass("active").find('[data-toggle="tab"]').attr("aria-expanded",!0),h?(b[0].offsetWidth,b.addClass("in")):b.removeClass("fade"),b.parent(".dropdown-menu")&&b.closest("li.dropdown").addClass("active").end().find('[data-toggle="tab"]').attr("aria-expanded",!0),e&&e()}var g=d.find("> .active"),h=e&&a.support.transition&&(g.length&&g.hasClass("fade")||!!d.find("> .fade").length);g.length&&h?g.one("bsTransitionEnd",f).emulateTransitionEnd(c.TRANSITION_DURATION):f(),g.removeClass("in")};var d=a.fn.tab;a.fn.tab=b,a.fn.tab.Constructor=c,a.fn.tab.noConflict=function(){return a.fn.tab=d,this};var e=function(c){c.preventDefault(),b.call(a(this),"show")};a(document).on("click.bs.tab.data-api",'[data-toggle="tab"]',e).on("click.bs.tab.data-api",'[data-toggle="pill"]',e)}(jQuery),+function(a){"use strict";function b(b){return this.each(function(){var d=a(this),e=d.data("bs.affix"),f="object"==typeof b&&b;e||d.data("bs.affix",e=new c(this,f)),"string"==typeof b&&e[b]()})}var c=function(b,d){this.options=a.extend({},c.DEFAULTS,d),this.$target=a(this.options.target).on("scroll.bs.affix.data-api",a.proxy(this.checkPosition,this)).on("click.bs.affix.data-api",a.proxy(this.checkPositionWithEventLoop,this)),this.$element=a(b),this.affixed=this.unpin=this.pinnedOffset=null,this.checkPosition()};c.VERSION="3.3.1",c.RESET="affix affix-top affix-bottom",c.DEFAULTS={offset:0,target:window},c.prototype.getState=function(a,b,c,d){var e=this.$target.scrollTop(),f=this.$element.offset(),g=this.$target.height();if(null!=c&&"top"==this.affixed)return c>e?"top":!1;if("bottom"==this.affixed)return null!=c?e+this.unpin<=f.top?!1:"bottom":a-d>=e+g?!1:"bottom";var h=null==this.affixed,i=h?e:f.top,j=h?g:b;return null!=c&&c>=i?"top":null!=d&&i+j>=a-d?"bottom":!1},c.prototype.getPinnedOffset=function(){if(this.pinnedOffset)return this.pinnedOffset;this.$element.removeClass(c.RESET).addClass("affix");var a=this.$target.scrollTop(),b=this.$element.offset();return this.pinnedOffset=b.top-a},c.prototype.checkPositionWithEventLoop=function(){setTimeout(a.proxy(this.checkPosition,this),1)},c.prototype.checkPosition=function(){if(this.$element.is(":visible")){var b=this.$element.height(),d=this.options.offset,e=d.top,f=d.bottom,g=a("body").height();"object"!=typeof d&&(f=e=d),"function"==typeof e&&(e=d.top(this.$element)),"function"==typeof f&&(f=d.bottom(this.$element));var h=this.getState(g,b,e,f);if(this.affixed!=h){null!=this.unpin&&this.$element.css("top","");var i="affix"+(h?"-"+h:""),j=a.Event(i+".bs.affix");if(this.$element.trigger(j),j.isDefaultPrevented())return;this.affixed=h,this.unpin="bottom"==h?this.getPinnedOffset():null,this.$element.removeClass(c.RESET).addClass(i).trigger(i.replace("affix","affixed")+".bs.affix")}"bottom"==h&&this.$element.offset({top:g-b-f})}};var d=a.fn.affix;a.fn.affix=b,a.fn.affix.Constructor=c,a.fn.affix.noConflict=function(){return a.fn.affix=d,this},a(window).on("load",function(){a('[data-spy="affix"]').each(function(){var c=a(this),d=c.data();d.offset=d.offset||{},null!=d.offsetBottom&&(d.offset.bottom=d.offsetBottom),null!=d.offsetTop&&(d.offset.top=d.offsetTop),b.call(c,d)})})}(jQuery);
 function showDatepicker() {
 
+  $('#currentDatetime').blur();
+
   var options = {
     date: new Date(),
     mode: 'datetime'
@@ -63215,31 +63217,21 @@ function showDatepicker() {
 
   window.datePicker.show(options, function(date) {
     $('#currentDatetime').val(date.toDateString() + " " + date.toLocaleTimeString());
+    $('#currentDatetime').change();
   });
 
 }
 
-document.addEventListener('deviceready', function () {
-
+function datePickerInit() {
   $('#currentDatetime').focus(showDatepicker);
-
-}, false);
+}
 // Stolen from
 // https://developers.google.com/maps/documentation/javascript/examples/geocoding-reverse
 
-var geocoder = new google.maps.Geocoder();
-
-function getAddress(latitude, longitude, callback) {
-    var latlng = new google.maps.LatLng(latitude, longitude);
-
-    geocoder.geocode({'latLng': latlng}, function(results, status) {
-        var address = results[1]['formatted_address'];
-        callback(address);
-    });
-}
 
 
-document.addEventListener('deviceready', function () {
+
+function getLocation() {
 
     var options = { enableHighAccuracy: true };
 
@@ -63247,11 +63239,25 @@ document.addEventListener('deviceready', function () {
 
         var coords = location['coords'];
 
-        getAddress(coords.latitude, coords.longitude, function (address) {
+        // If there is no internet connection, put to field just coords.
+        if(navigator.network.connection.type == Connection.NONE) {
 
-            $('#currentLocation').val(address);
+            $('#currentLocation').val(coords.latitude +','+ coords.longitude);
 
-        });
+        } else {
+
+            var geocoder = new google.maps.Geocoder();
+
+            var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
+
+            geocoder.geocode({'latLng': latlng}, function(results, status) {
+                var address = results[1]['formatted_address'];
+
+                $('#currentLocation').val(address);
+                $('#currentLocation').change();
+            });
+
+        }
 
     };
 
@@ -63261,18 +63267,13 @@ document.addEventListener('deviceready', function () {
 
     var location = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 
-});
+};
 App = Ember.Application.create();
 
 App.Router.map(function() {
-  this.route("stage", { path: "/stage/:index" });
-});
-
-
-
-App.IndexRoute = Ember.Route.extend({
-    templateName: 'stage1',
-    controllerName: 'stage'
+  this.resource("stages", function () {
+    this.route("stage", { path: "/:index" });
+  });
 });
 
 App.NavigationView = Ember.View.extend({
@@ -63280,36 +63281,133 @@ App.NavigationView = Ember.View.extend({
 });
 
 
-App.StageRoute = Ember.Route.extend({
+App.StagesStageController = Ember.ObjectController.extend({
 
-  setupController: function(controller, model) {
-    controller.set('model', model);
+  jsonData: '',
+
+  // Stage 1
+  selectedTitle: localStorage.getItem('selectedTitle'),
+  firstName: localStorage.getItem('firstName'),
+  lastName: localStorage.getItem('lastName'),
+  dateOfBirth: localStorage.getItem('dateOfBirth'),
+  stageOneFields: ['selectedTitle', 'firstName', 'lastName', 'dateOfBirth'],
+  // Stage 2
+  currentLocation: localStorage.getItem('currentLocation'),
+  currentDatetime: localStorage.getItem('currentDatetime'),
+  stageTwoFields: ['currentLocation', 'currentDatetime'],
+  // Stage 3
+  userFeedback: localStorage.getItem('userFeedback'),
+  stageThreeFields: ['userFeedback'],
+
+  selectTitles: ['Mr', 'Mrs', 'Ms', 'Miss'],
+
+  actions: {
+
+    submitStageOne: function () {
+      if (this.validateFields(this.stageOneFields)) {
+        this.storeFields(this.stageOneFields);
+        this.transitionToRoute('stages.stage', {index: 2});
+      }
+    },
+
+    submitStageTwo: function () {
+      if (this.validateFields(this.stageTwoFields)) {
+        this.storeFields(this.stageTwoFields);
+        this.transitionToRoute('stages.stage', {index: 3});
+      }
+    },
+
+    submitStageThree: function () {
+      if (this.validateFields(this.stageThreeFields)) {
+        this.storeFields(this.stageThreeFields);
+
+        // One big validation before doing next step
+        if(this.validateFields(this.getAllFields())) {
+          this.sendData();
+        }
+      }
+    }
+
   },
+
+
+  getAllFields: function() {
+    return this.stageOneFields.concat(this.stageTwoFields, this.stageThreeFields);
+  },
+
+
+  getData: function() {
+    var dataValues = {};
+    var fields = this.getAllFields();
+
+    fields.forEach(function (item) {
+      dataValues[item] = this.get(item);
+    }.bind(this));
+
+    return dataValues;
+  },
+
+
+  sendData: function() {
+    var data = this.getData();
+    console.log(data);
+
+    // We should store data or output JSON if there is no network coverage
+    if(navigator.network.connection.type == Connection.NONE) {
+      this.jsonData = JSON.stringify(data);
+      this.transitionToRoute('stages.stage', {index: 4});
+    }
+  },
+
+
+  storeFields: function (fields) {
+    fields.forEach(function (item) {
+      localStorage.setItem(item, this.get(item).trim());
+    }.bind(this));
+  },
+
+
+  validateFields: function(fields) {
+    errorFields = [];
+    fields.forEach(function (item) {
+      var value = this.get(item);
+
+      if (!value || !value.trim()) {
+        errorFields.push(item);
+      }
+    }.bind(this));
+
+    if (errorFields.length) {
+      alert('Please fill out this field(s): ' + errorFields.join(', '));
+    }
+
+    return !errorFields.length;
+  }
+
+});
+
+App.StagesStageRoute = Ember.Route.extend({
 
   renderTemplate: function() {
-    var index = this.controller.model.index.toString();
+    var index = 1;
+
+    if (this.controller.model) {
+      var index = this.controller.model.index.toString();
+    }
+
     this.render('stage' + index);
+
+    if (index == 2) {
+      getLocation();
+      setTimeout(datePickerInit, 1); // 'hack' -- It will be executed after render (common JS issue)
+    }
   }
 
 });
 
 
-/*
 App.IndexRoute = Ember.Route.extend({
-
-  IndexController: function(controller) {
-    // Set the IndexController's `title`
-    controller.set('title', "Ohooo");
-  },
-
-  StageController: function(controller) {
-    // Set the IndexController's `title`
-    controller.set('title', "My App");
-  },
-
-  model: function() {
-    return ['red', 'yellow', 'blue'];
+  redirect: function() {
+    this.transitionTo('stages.stage', {index: 1});
   }
-
 });
-*/

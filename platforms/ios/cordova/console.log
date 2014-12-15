@@ -462,3 +462,82 @@ To disable web storage backup to iCloud, set the BackupWebStorage preference to 
 2014-12-14 19:58:00.459 Mubaloo[27890:1200232] Resetting plugins due to page load.
 2014-12-14 19:58:00.819 Mubaloo[27890:1200232] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/D0B303D4-FA88-4D53-9783-7E9A30D6266D/Mubaloo.app/www/index.html
 2014-12-14 19:58:00.829 Mubaloo[27890:1200232] locationManager::didFailWithError (null)
+2014-12-15 01:10:12.667 Mubaloo[8663:80527] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Data/Application/A1C0B3DC-198A-4800-938B-4D2D3A4FD189/Library/Cookies/Cookies.binarycookies
+2014-12-15 01:10:12.905 Mubaloo[8663:80527] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-15 01:10:12.905 Mubaloo[8663:80527] Multi-tasking -> Device: YES, App: YES
+2014-12-15 01:10:12.920 Mubaloo[8663:80527] Unlimited access to network resources
+2014-12-15 01:10:12.927 Mubaloo[8663:80527] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-15 01:10:13.616 Mubaloo[8663:80527] Resetting plugins due to page load.
+2014-12-15 01:10:14.274 Mubaloo[8663:80527] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/79EE5447-7F14-467E-A299-22CE1B3F8075/Mubaloo.app/www/index.html#/stages/1
+2014-12-15 01:10:34.723 Mubaloo[8663:80527] locationManager::didFailWithError (null)
+2014-12-15 01:11:15.782 Mubaloo[9047:81996] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Data/Application/9516A53F-9536-4354-A802-118708C90395/Library/Cookies/Cookies.binarycookies
+2014-12-15 01:11:15.889 Mubaloo[9047:81996] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-15 01:11:15.889 Mubaloo[9047:81996] Multi-tasking -> Device: YES, App: YES
+2014-12-15 01:11:15.891 Mubaloo[9047:81996] Unlimited access to network resources
+2014-12-15 01:11:15.893 Mubaloo[9047:81996] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-15 01:11:16.258 Mubaloo[9047:81996] Resetting plugins due to page load.
+2014-12-15 01:11:16.820 Mubaloo[9047:81996] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/CEE3D39F-3F68-41EF-95C9-5639E2665741/Mubaloo.app/www/index.html#/stages/1
+2014-12-15 01:11:25.813 Mubaloo[9047:81996] locationManager::didFailWithError (null)
+2014-12-15 01:13:29.307 Mubaloo[9503:83898] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Data/Application/AFDCADA0-B5A4-4D49-8F43-558B5424AF7B/Library/Cookies/Cookies.binarycookies
+2014-12-15 01:13:29.398 Mubaloo[9503:83898] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-15 01:13:29.398 Mubaloo[9503:83898] Multi-tasking -> Device: YES, App: YES
+2014-12-15 01:13:29.399 Mubaloo[9503:83898] Unlimited access to network resources
+2014-12-15 01:13:29.402 Mubaloo[9503:83898] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-15 01:13:29.736 Mubaloo[9503:83898] Resetting plugins due to page load.
+2014-12-15 01:13:30.135 Mubaloo[9503:83898] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/AA713E73-ADB1-443E-9031-5DA6E1E7DD36/Mubaloo.app/www/index.html
+2014-12-15 01:14:28.515 Mubaloo[9874:85232] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Data/Application/EF2BA8A8-7DC1-4B82-8DBB-B4E023C16CF5/Library/Cookies/Cookies.binarycookies
+2014-12-15 01:14:28.619 Mubaloo[9874:85232] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-15 01:14:28.619 Mubaloo[9874:85232] Multi-tasking -> Device: YES, App: YES
+2014-12-15 01:14:28.621 Mubaloo[9874:85232] Unlimited access to network resources
+2014-12-15 01:14:28.624 Mubaloo[9874:85232] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-15 01:14:28.983 Mubaloo[9874:85232] Resetting plugins due to page load.
+2014-12-15 01:14:29.386 Mubaloo[9874:85232] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/C0F32573-0D7A-4B6C-AA15-F5C4993EDBDE/Mubaloo.app/www/index.html
+2014-12-15 01:16:38.783 Mubaloo[10337:87287] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Data/Application/A63A0E1F-0B90-43CF-881B-334977EB04F9/Library/Cookies/Cookies.binarycookies
+2014-12-15 01:16:39.023 Mubaloo[10337:87287] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-15 01:16:39.024 Mubaloo[10337:87287] Multi-tasking -> Device: YES, App: YES
+2014-12-15 01:16:39.038 Mubaloo[10337:87287] Unlimited access to network resources
+2014-12-15 01:16:39.053 Mubaloo[10337:87287] 
+
+Started backup to iCloud! Please be careful.
+Your application might be rejected by Apple if you store too much data.
+For more information please read "iOS Data Storage Guidelines" at:
+https://developer.apple.com/icloud/documentation/data-storage/
+To disable web storage backup to iCloud, set the BackupWebStorage preference to "local" in the Cordova config.xml file
+
+2014-12-15 01:16:39.760 Mubaloo[10337:87287] Resetting plugins due to page load.
+2014-12-15 01:16:40.431 Mubaloo[10337:87287] Finished load of: file:///Users/ejay/Library/Developer/CoreSimulator/Devices/CC48A786-074D-4723-9F9A-1FEB1DEFD73B/data/Containers/Bundle/Application/9A784468-9EA1-495C-8A49-6A066CB677BC/Mubaloo.app/www/index.html#/stages/1
+2014-12-15 01:17:00.137 Mubaloo[10337:87287] THREAD WARNING: ['Geolocation'] took '26.556152' ms. Plugin should use a background thread.
+2014-12-15 01:17:00.144 Mubaloo[10337:87287] locationManager::didFailWithError (null)
+2014-12-15 01:17:02.474 Mubaloo[10337:87287] THREAD WARNING: ['DatePicker'] took '86.927002' ms. Plugin should use a background thread.
+2014-12-15 01:17:08.803 Mubaloo[10337:87287] Resetting plugins due to page load.
+2014-12-15 01:17:08.806 Mubaloo[10337:87287] Failed to load webpage with error: The requested URL was not found on this server.
+2014-12-15 01:19:57.603 Mubaloo[10337:87287] Resetting plugins due to page load.
+2014-12-15 01:19:57.606 Mubaloo[10337:87287] Failed to load webpage with error: The requested URL was not found on this server.

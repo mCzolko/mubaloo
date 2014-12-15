@@ -25,6 +25,9 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
     <name>Mubaloo</name>
     <description>Mubaloo Front End Developer Trial Task</description>
     <author email="michael@czolko.cz" href="czolko.cz">Michael Czolko</author>
